@@ -8,7 +8,7 @@ int starting_column = 3;
 
 void print(int i, int j, int **mid) {
     if (mid[i][j] == -1) 
-        cout << i << " ";
+        cout << i+1 << " ";
     else {
         if (mid[i][j] != j) print(i,mid[i][j],mid);
         if (mid[i][j] != i) print(mid[i][j],j,mid);
@@ -84,10 +84,11 @@ int main(int argc, char **argv) {
 
     for (i=0; i<j; i++)
         for (j=i+1; j<n; j++) {
-            cout << i << "->" << j << " cost: " << adj[i][j] 
+            
+            cout << i+1 << "->" << j+1 << " cost: " << adj[i][j]
                  << " path: ";
             print(i,j,mid); 
-            cout << j << endl;
+            cout << j+1 << endl;
             
             paths[paths_row][0] = i+1;
             paths[paths_row][1] = j+1;
